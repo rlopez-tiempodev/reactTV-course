@@ -58,6 +58,7 @@ const common = {
     // We'll be using the latter form given it's
     // convenient with more complex configurations.
     entry: {
+        'whatwg-fetch': 'whatwg-fetch',
         style: PATHS.style,
         app: PATHS.app,
         vendor: ['react']
