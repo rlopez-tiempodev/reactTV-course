@@ -1,11 +1,9 @@
 import React from 'react';
-import {get} from './utils/api';
+// import {get} from './utils/api';
 
 class Hello extends React.Component {
     componentDidMount() {
-        let response = await get('genre/28/movies');
-        let json = await response.json() ;
-        console.log( json );
+        // get('genre/28/movies');
     }
 
     render() {

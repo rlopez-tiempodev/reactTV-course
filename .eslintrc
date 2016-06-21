@@ -21,7 +21,7 @@
   ],
   "rules": {
     // Disable `no-console` rule
-    "no-console": 1,
+    "no-console": 0,
     // Disable `no-debugger`rule
     "no-debugger": 0,
     // Give a warning if identifiers contain underscores
