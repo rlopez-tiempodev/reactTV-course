@@ -18,13 +18,13 @@ module.exports = function (config) {
     frameworks: [ 'mocha' , 'chai' ],
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
-      'tests/**/*.spec.js',
+      'tests/**/*.spec.js'
     ],
     plugins: [
       webpack, 
       'karma-mocha',
       'karma-chai',
-      'karma-chrome-launcher',
+      // 'karma-chrome-launcher',
       'karma-phantomjs-launcher',
       'karma-coverage',
       'karma-spec-reporter'

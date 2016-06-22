@@ -10,7 +10,10 @@ class Hello extends React.Component {
 
   
   render() {
-    return <h1 id="asd">Hello 2</h1>
+    return (<div>
+            <h1 id="asd">Hello darkness my old friend.</h1>
+            </div>
+           );
   }
 }
 
