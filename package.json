@@ -6,8 +6,8 @@
   "scripts": {
     "stats": "webpack --profile --json > stats.json",
     "start": "webpack-dev-server",
-    "deploy": "gh-pages -d build",
-    "build": "webpack",
+    "deploy": "clear && gh-pages -d build",
+    "build": "clear && webpack",
     "test": "clear && node_modules/.bin/karma start --single-run --no-auto-watch karma.conf.js",
     "test:watch": "clear && node_modules/.bin/karma start --auto-watch --no-single-run karma.conf.js",
     "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
@@ -23,6 +23,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.9",
+    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
     "eslint": "^2.12.0",
     "eslint-loader": "^1.3.0",
@@ -30,6 +31,7 @@
     "expect": "^1.20.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.19.0",
     "istanbul-instrumenter-loader": "^0.2.0",
@@ -64,6 +66,7 @@
   },
   "dependencies": {
     "es6-promise": "^3.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "whatwg-fetch": "^1.0.0"

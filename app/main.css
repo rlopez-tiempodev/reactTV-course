@@ -1,3 +1,10 @@
+
 body {
     background: cornsilk;
+}
+
+#asd {
+    background: url(assets/favicon.png) no-repeat;
+    display: block;
+    height: 302px;
 }

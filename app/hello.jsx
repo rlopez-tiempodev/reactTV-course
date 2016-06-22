@@ -1,14 +1,17 @@
 import React from 'react';
-// import {get} from './utils/api';
+import client from './utils/MovieDBClient';
+
+window.client = client;
 
 class Hello extends React.Component {
-    componentDidMount() {
-        // get('genre/28/movies');
-    }
+  componentDidMount() {
+    client.get('genre/28/movies');
+  }
 
-    render() {
-        return <h1>Hello 2</h1>
-    }
+  
+  render() {
+    return <h1 id="asd">Hello 2</h1>
+  }
 }
 
 export default Hello;

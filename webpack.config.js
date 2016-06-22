@@ -23,8 +23,9 @@ const PATHS = {
     path.join(__dirname, 'node_modules', 'purecss'),
     path.join(__dirname, 'app', 'main.css')
   ],
+  build: path.join(__dirname, 'build'),
+  assets: path.join(__dirname, 'app','assets')
 
-  build: path.join(__dirname, 'build')
 };
 
 const common = {
@@ -48,7 +49,12 @@ const common = {
       {
         test: require.resolve('react'),
         loader: 'expose?React'
-      }
+      },
+      {
+        //IMAGE LOADER
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader:'file'
+      },
     ]
   },
   resolve: {
@@ -58,20 +64,19 @@ const common = {
   // We'll be using the latter form given it's
   // convenient with more complex configurations.
   entry: {
-    'whatwg-fetch': 'whatwg-fetch',
+    // 'whatwg-fetch': ['whatwg-fetch'],
     style: PATHS.style,
     app: PATHS.app,
-    vendor: ['react']
+    vendor: ['react','react-dom','es6-promise','isomorphic-fetch'],
   },
   output: {
-    // publicPath: '/reacttv/',
     path: PATHS.build,
     filename: '[name].[hash].js',
     chunkFilename: '[hash].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React TV.',
+      title: 'ReactJS - Course.',
       template: './app/index.ejs', // Load a custom template (ejs by default but can be changed)
       inject: 'body' // Inject all scripts into the body (this is the default so you can skip it)
     })
@@ -89,18 +94,21 @@ case 'stats':
     common,
     sourceMaps.production,
     
+    
     parts.setFreeVariable(
       'process.env.NODE_ENV',
       'production'
     ),
 
+    
     parts.clean(PATHS.build),
     parts.minify(),
+    parts.copyStaticAssets(PATHS.assets),
     
     parts.purifyCSS([PATHS.app]),
     parts.extractCSS(PATHS.style)
-    
   );
+
   break;
 
 case 'test':
@@ -113,7 +121,7 @@ case 'test:watch':
                    port: process.env.PORT
                  })
                 );
-  // Remove style to avoid conflicts in karma
+  // Remove entry.style to avoid conflicts with karma (no pun intended)
   delete config.entry.style;
   break;
 default:
