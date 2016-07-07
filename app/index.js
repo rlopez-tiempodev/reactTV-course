@@ -2,5 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-import Hello from './hello';
-ReactDOM.render(<Hello/>, document.getElementById('app'));
+import HelloWorld from './helloworld';
+import {TVList} from './lists';
+
+//import {TVList, ListItem} from './lists'
+//import series from './series';
+
+ReactDOM.render(<HelloWorld greet={<TVList/>}/>, document.getElementById('app'));

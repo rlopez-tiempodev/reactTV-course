@@ -1,9 +1,1 @@
-
-body {
-    background: cornsilk;
-}
-
-#asd {
-    display: block;
-    height: 302px;
-}
+@import 'styles/test.css'
