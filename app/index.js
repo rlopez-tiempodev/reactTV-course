@@ -8,9 +8,6 @@ import TVListPage from './components/pages/TVListPage';
 
 import HelloWorld from './helloworld';
 
-//import {TVList, ListItem} from './lists'
-//import series from './series';
-
 const Routes = (
     <Router history={browserHistory}>
         <Route path="/" component={App}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import series from './series'
 import _ from 'lodash';
+import ListItem from './ListItem';
 
 export const TVList = React.createClass({
     
@@ -39,27 +40,5 @@ export const TVList = React.createClass({
             series: newSeries,
         });
         //return false;
-    },
-});
-
-
-
-export const ListItem = React.createClass({
-    render(){
-        return (
-            <li className="" >
-                <input type="checkbox" data-id={this.props.serieId} checked={this.props.viewed} onChange={this.props.onChange} value="t"/>
-                <span>{this.props.season} × {this.props.chapter} - {this.props.name}</span>
-            </li>
-        );
-    },
-
-    propTypes: {
-        chapter: React.PropTypes.string,
-        name: React.PropTypes.string.isRequired,
-        serieId: React.PropTypes.string,
-        season: React.PropTypes.string,
-        viewed: React.PropTypes.bool,
-        onChange: React.PropTypes.func.isRequired
     },
 });
