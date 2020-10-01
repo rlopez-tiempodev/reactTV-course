@@ -3,8 +3,8 @@
 ##### Or How to teach yourself ReactJS + Flux + Webpack in 5 sessions. 
 
 This is a boilerplate repository (if you can call it that way) with a set of tools already pre-configured for you that contains:
-  - Webpack configuration with loaders for ES6 ,ESLint, CSS.
   - Webpack dev server.
+  - Webpack configuration with loaders for ES6 ,ESLint, CSS.
   - Mocha for testing.
   - Clean and Build for production tasks.
   - A deploy task (using gh-pages).
